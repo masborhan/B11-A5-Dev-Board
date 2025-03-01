@@ -13,7 +13,7 @@ function completeTask(button, taskName) {
   // Log the activity
   const log = document.getElementById("activityLog");
   const timestamp = new Date().toLocaleTimeString();
-  log.innerHTML += `<li>You have completed the task '${taskName}' at ${timestamp}</li>`;
+  log.innerHTML += `<li>You have completed the task '${taskName}' at ${timestamp}</li><br>`;
 
   // Update task counts
   taskCount--;
