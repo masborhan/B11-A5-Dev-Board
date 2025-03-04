@@ -8,105 +8,104 @@
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
     <!-- Navbar -->
-    <nav class="bg-white shadow-md rounded-lg p-6 flex justify-between items-center">
-        <div >
-            <div class="flex items-center space-x-4">
-            <img src="./assets/logo.png" alt="Logo">
+    <nav class="bg-white shadow-md rounded-lg p-4 md:p-6 flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-4 mb-4 md:mb-0">
+            <img src="./assets/logo.png" alt="Logo" class="h-10 w-10">
             <h1 class="text-xl text-blue-600">Dev<span class="font-bold text-gray-900">Board</span></h1>
-            </div>
-        </div>   
-        <div class="flex items-center space-x-4">
-            <button onclick="window.location.href='index.html'" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded">Back to desk</button>
         </div>
-        </nav>
+        <div class="flex items-center space-x-4">
+            <button onclick="window.location.href='index.html'" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300">Back to desk</button>
+        </div>
+    </nav>
 
     <div class="container mx-auto px-4 py-8">
-            <h1 class="text-4xl font-bold text-center mb-8">Blogs</h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">Blogs</h1>
 
-    <!-- Question 1 -->
-    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-      <h2 class="text-2xl font-semibold mb-4">1. What are the different ways to select an element in the DOM?</h2>
-      <p class="text-gray-700">
-        There are several ways to select elements in the DOM using JavaScript:
-      </p>
-      <ul class="list-disc list-inside mt-2">
-        <li><code class="bg-gray-200 p-1 rounded">document.getElementById('id')</code> - Selects an element by its ID.</li>
-        <li><code class="bg-gray-200 p-1 rounded">document.querySelector('selector')</code> - Selects the first element that matches a CSS selector.</li>
-        <li><code class="bg-gray-200 p-1 rounded">document.querySelectorAll('selector')</code> - Selects all elements that match a CSS selector.</li>
-        <li><code class="bg-gray-200 p-1 rounded">document.getElementsByClassName('class')</code> - Selects elements by their class name.</li>
-        <li><code class="bg-gray-200 p-1 rounded">document.getElementsByTagName('tag')</code> - Selects elements by their tag name.</li>
-      </ul>
+        <!-- Question 1 -->
+        <div class="bg-white p-4 md:p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold mb-4">1. What are the different ways to select an element in the DOM?</h2>
+            <p class="text-gray-700">
+                There are several ways to select elements in the DOM using JavaScript:
+            </p>
+            <ul class="list-disc list-inside mt-2">
+                <li><code class="bg-gray-200 p-1 rounded">document.getElementById('id')</code> - Selects an element by its ID.</li>
+                <li><code class="bg-gray-200 p-1 rounded">document.querySelector('selector')</code> - Selects the first element that matches a CSS selector.</li>
+                <li><code class="bg-gray-200 p-1 rounded">document.querySelectorAll('selector')</code> - Selects all elements that match a CSS selector.</li>
+                <li><code class="bg-gray-200 p-1 rounded">document.getElementsByClassName('class')</code> - Selects elements by their class name.</li>
+                <li><code class="bg-gray-200 p-1 rounded">document.getElementsByTagName('tag')</code> - Selects elements by their tag name.</li>
+            </ul>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="bg-white p-4 md:p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold mb-4">2. What is the difference between innerHTML, innerText, and textContent?</h2>
+            <p class="text-gray-700">
+                These properties are used to manipulate the content of an element:
+            </p>
+            <ul class="list-disc list-inside mt-2">
+                <li><code class="bg-gray-200 p-1 rounded">innerHTML</code> - Gets or sets the HTML content inside an element, including tags.</li>
+                <li><code class="bg-gray-200 p-1 rounded">innerText</code> - Gets or sets the visible text content of an element, excluding hidden elements and respecting CSS styling.</li>
+                <li><code class="bg-gray-200 p-1 rounded">textContent</code> - Gets or sets the text content of an element, including hidden elements, and ignores CSS styling.</li>
+            </ul>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="bg-white p-4 md:p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold mb-4">3. What is event delegation in the DOM?</h2>
+            <p class="text-gray-700">
+                Event delegation is a technique where we can add a single event listener to a parent element to handle events for all of its child elements. This is useful for dynamically added elements or when we want to optimize performance by reducing the number of event listeners.
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mt-4 overflow-x-auto">
+                <code>
+document.querySelector('#parent').addEventListener('click', function(event) {
+    if (event.target.matches('button')) {
+        console.log('Button clicked:', event.target.textContent);
+    }
+});
+                </code>
+            </pre>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="bg-white p-4 md:p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold mb-4">4. What is event bubbling in the DOM?</h2>
+            <p class="text-gray-700">
+                Event bubbling is a mechanism in the DOM where an event triggered on a child element propagates up through its ancestors in the DOM tree. This allows we to handle events at a higher level in the hierarchy.
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mt-4 overflow-x-auto">
+                <code>
+document.querySelector('#child').addEventListener('click', function(event) {
+    console.log('Child clicked');
+});
+
+document.querySelector('#parent').addEventListener('click', function(event) {
+    console.log('Parent clicked');
+});
+                </code>
+            </pre>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="bg-white p-4 md:p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold mb-4">5. How do you create, add, and remove elements using JavaScript?</h2>
+            <p class="text-gray-700">
+                We can create, add, and remove elements dynamically using JavaScript:
+            </p>
+            <pre class="bg-gray-200 p-4 rounded mt-4 overflow-x-auto">
+                <code>
+<!-- Create a new element -->
+const newElement = document.createElement('div');
+newElement.textContent = 'New Element';
+
+<!-- Add the element to the DOM -->
+document.body.appendChild(newElement);
+
+<!-- Remove an element -->
+const elementToRemove = document.querySelector('#elementToRemove');
+elementToRemove.remove();
+                </code>
+            </pre>
+        </div>
     </div>
-
-    <!-- Question 2 -->
-    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-      <h2 class="text-2xl font-semibold mb-4">2. What is the difference between innerHTML, innerText, and textContent?</h2>
-      <p class="text-gray-700">
-        These properties are used to manipulate the content of an element:
-      </p>
-      <ul class="list-disc list-inside mt-2">
-        <li><code class="bg-gray-200 p-1 rounded">innerHTML</code> - Gets or sets the HTML content inside an element, including tags.</li>
-        <li><code class="bg-gray-200 p-1 rounded">innerText</code> - Gets or sets the visible text content of an element, excluding hidden elements and respecting CSS styling.</li>
-        <li><code class="bg-gray-200 p-1 rounded">textContent</code> - Gets or sets the text content of an element, including hidden elements, and ignores CSS styling.</li>
-      </ul>
-    </div>
-
-    <!-- Question 3 -->
-    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-      <h2 class="text-2xl font-semibold mb-4">3. What is event delegation in the DOM?</h2>
-      <p class="text-gray-700">
-        Event delegation is a technique where we can add a single event listener to a parent element to handle events for all of its child elements. This is useful for dynamically added elements or when we want to optimize performance by reducing the number of event listeners.
-      </p>
-      <pre class="bg-gray-200 p-4 rounded mt-4">
-        <code>
-                document.querySelector('#parent').addEventListener('click', function(event) {
-                if (event.target.matches('button')) {
-                console.log('Button clicked:', event.target.textContent);}
-                });
-        </code>
-      </pre>
-    </div>
-
-    <!-- Question 4 -->
-    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-      <h2 class="text-2xl font-semibold mb-4">4. What is event bubbling in the DOM?</h2>
-      <p class="text-gray-700">
-        Event bubbling is a mechanism in the DOM where an event triggered on a child element propagates up through its ancestors in the DOM tree. This allows we to handle events at a higher level in the hierarchy.
-      </p>
-      <pre class="bg-gray-200 p-4 rounded mt-4">
-        <code>
-            document.querySelector('#child').addEventListener('click', function(event) {
-            console.log('Child clicked');
-            });
-
-            document.querySelector('#parent').addEventListener('click', function(event) {
-                console.log('Parent clicked');
-            });
-        </code>
-      </pre>
-    </div>
-
-    <!-- Question 5 -->
-    <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-      <h2 class="text-2xl font-semibold mb-4">5. How do you create, add, and remove elements using JavaScript?</h2>
-      <p class="text-gray-700">
-        We can create, add, and remove elements dynamically using JavaScript:
-      </p>
-      <pre class="bg-gray-200 p-4 rounded mt-4">
-        <code>
-         <!-- Create a new element -->
-            const newElement = document.createElement('div');
-            newElement.textContent = 'New Element';
-
-        <!-- Add the element to the DOM -->
-            document.body.appendChild(newElement);
-
-        <!-- Remove an element -->
-            const elementToRemove = document.querySelector('#elementToRemove');
-            elementToRemove.remove();
-        </code>
-      </pre>
-    </div>
-  </div>
 </body>
 </html>
